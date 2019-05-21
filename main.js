@@ -20,10 +20,12 @@ btnStart.onclick = function(){
       array[x] = playSound();
       if(++x == loopSound){
          window.clearInterval(interval);
+         window.setTimeout(function(){
+            playGame(array);
+         },1000);
       }
    },500);
    console.log(array);
-   var pG = window.setTimeout(playGame(array),1000);
 };
 
 function playSound(){
@@ -43,6 +45,35 @@ function playOff(){
 }
 
 function playGame(array){
-   var startTime = new Date();
-   
+   console.log("playGame: " + array);
+   var x = 0;
+   var concluido = false;
+   var init,end;
+   init = new Date();
+   document.addEventListener('keyup',(event) =>{
+      if(!concluido){
+         if(x === array.length-1){
+            if((event.keyCode === 65 && array[x] === 0)||(event.keyCode === 76 && array[x] === 1)){
+               console.log("concluido");
+               concluido = true;
+               end = new Date();
+               console.log(Math.floor((end-init)/array.length));
+            }else{
+               x=0;
+               console.log(x);
+            }
+         }else if(event.keyCode === 65 && array[x] === 0){
+            x++;
+            console.log(x);
+         }else if(event.keyCode === 76 && array[x] === 1){
+            x++;
+            console.log(x);
+         }else{
+            x=0;
+            console.log(x);
+         }
+      }else{
+         return
+      }
+   });
 }
