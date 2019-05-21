@@ -33,10 +33,6 @@ h2{
    font-weight: 300;
    max-width: 500px;
 }
-h2 span{
-   font-style: italic;
-   font-weight: 700;
-}
 
 input#levelDiff{
    color:#fff;
@@ -92,4 +88,22 @@ button#start:hover{
 }
 .buttonLine button:nth-child(1):hover{
    background-color: #895435;
+}
+
+span#startSpan{
+   padding: 10px 30px;
+   font-family: 'Trykker', serif;
+   font-size: 18px;
+   color: #fff;
+   transition: 0.2s all ease;
+}
+
+p{
+   font-family: 'Trykker', serif;
+   font-size: 18px;
+   color: #fff;
+}
+p span{
+   font-style: italic;
+   font-weight: 700;
 }

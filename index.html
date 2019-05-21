@@ -13,7 +13,8 @@
    <div class="container">
 
       <h1>Squeek-Squaak<br>Simulator</h1>
-      <h2>Escolha a dificuldade, aperte A para <span>squeek</span> ou L para <span>squaak</span> assim que a luz acender.</h2>
+      <h2>Escolha a dificuldade e clique para começar.</h2>
+      <p>Aperte A para <span>squeek</span> ou L para <span>squaak</span> assim que a luz acender.</p>
       <input type="number" name="level" id="levelDiff" min="1" step="1" value="1">
       <button id="start">Começar</button>
       <div class="buttonLine">
@@ -22,6 +23,7 @@
          <button onclick="squaak.play()">Squaak</button>
       </div>
       <span id="startSpan">PARADO</span>
+      <p id="result">Aqui aparecerá o resultado.</p>
    </div>
    <script src="main.js"></script>
 </body>
