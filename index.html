@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Squeek-Squaak Simulator</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps|Trykker&display=swap" rel="stylesheet">
+</head>
+<body onkeydown="playOff()">
+   <div class="container">
+
+      <h1>Squeek-Squaak<br>Simulator</h1>
+      <h2>Escolha a dificuldade, aperte A para <span>squeek</span> ou L para <span>squaak</span> assim que a luz acender.</h2>
+      <input type="number" name="level" id="levelDiff" min="1" step="1" value="1">
+      <button id="start">Começar</button>
+      <div class="buttonLine">
+
+         <button onclick="squeek.play()">Squeek</button>
+         <button onclick="squaak.play()">Squaak</button>
+      </div>
+      <span id="startSpan">PARADO</span>
+   </div>
+   <script src="main.js"></script>
+</body>
+</html>

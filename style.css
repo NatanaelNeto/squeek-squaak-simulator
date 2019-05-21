@@ -1,0 +1,95 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+
+html, body{
+   height: 100vh;
+   width: 100%;
+   background-color: #20282E;
+   color: #fff;
+}
+
+body .container{
+   width: 90%;
+   height: 100vh;
+   margin: 0 auto;
+   min-width: 300px;
+   max-width: 1920px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   text-align: center;
+}
+
+h1{
+   font-family: 'Macondo Swash Caps', cursive;
+   font-size: 56px;
+}
+h2{
+   font-family: 'Trykker', serif;
+   font-size: 25px;
+   font-weight: 300;
+   max-width: 500px;
+}
+h2 span{
+   font-style: italic;
+   font-weight: 700;
+}
+
+input#levelDiff{
+   color:#fff;
+   background: none;
+   padding: 20px 30px;
+   font-family: 'Trykker', serif;
+   font-size: 25px;
+   outline: none;
+   border: none;
+   text-decoration: none;
+   font-weight: 700;
+   text-align: center;
+   transition: 0.2s all ease;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+   -webkit-appearance: none;
+   margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input#levelDiff:focus,input#levelDiff:hover{
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+button#start{
+   padding: 10px 30px;
+   font-family: 'Trykker', serif;
+   font-size: 18px;
+   color: #fff;
+   background: none;
+   outline: none;
+   border: none;
+   transition: all 0.2s ease;
+}
+button#start:hover{
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.buttonLine button{
+   outline: none;
+   border: none;
+   padding: 10px 30px;
+   background-color: #58442C;
+   color: #fff;
+   transition: all 0.2s ease;
+}
+.buttonLine button:hover{
+   background-color: #68543C;
+}
+.buttonLine button:nth-child(1){
+   background-color: #794425;
+}
+.buttonLine button:nth-child(1):hover{
+   background-color: #895435;
+}
