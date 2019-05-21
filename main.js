@@ -53,16 +53,15 @@ function playGame(array){
    texto.style.backgroundColor = "#C71606";
    texto.innerHTML = "COMEÇOU!";
    init = new Date();
-   document.addEventListener('keyup',(event) =>{
+   document.addEventListener('keydown',(event) =>{
       if(!concluido){
          if(x === array.length-1){
             if((event.keyCode === 65 && array[x] === 0)||(event.keyCode === 76 && array[x] === 1)){
-               console.log("concluido");
-               texto.innerHTML = "CONCLUÍDO!";
-               texto.style.backgroundColor = "rgba(0,0,0,0)";
-               concluido = true;
                end = new Date();
                calculateMedia(init,end,array.length);
+               console.log("concluido" + (end-init));
+               
+               concluido = true;
             }else{
                x=0;
                texto.innerHTML = "ERRADO!";
@@ -88,19 +87,23 @@ function playGame(array){
 }
 
 function calculateMedia(a,b,c){
+   console.log("ok");
+   var texto = document.getElementById("startSpan");
+   texto.style.backgroundColor = "rgba(0,0,0,0)";
    var media = Math.floor((b-a)/c);
    var result = document.getElementById("result");
+   texto.innerHTML = "CONCLUÍDO! " + media + "ms por batida";
    if(media < 400){
       result.style.color = "#C71606";
-      result.innerHTML = "Muito rápido! Seu resultado foi: " + media + "ms para 500ms";
+      result.innerText = "Muito rápido! Seu resultado foi: " + media + "ms para 500ms";
    }else if(media >= 400 && media < 480){
       result.style.color = "#c7c706";
-      result.innerHTML = "Bom, mas pode melhorar indo mais devagar. Seu resultado foi: " + media + "ms para 500ms";
+      result.innerText = "Bom, mas pode melhorar indo mais devagar. Seu resultado foi: " + media + "ms para 500ms";
    }else if(media >= 480 && media < 520){
       result.style.color = "#06c706";
-      result.innerHTML = "Muito bom! Você acertou o ritmo! Seu resultado foi: " + media + "ms para 500ms";
+      result.innerText = "Muito bom! Você acertou o ritmo! Seu resultado foi: " + media + "ms para 500ms";
    }else if(media >= 520 && media < 600){
       result.style.color = "#C71606";
-      result.innerHTML = "Muito lento! Seu resultado foi: " + media + "ms para 500ms";
+      result.innerText = "Muito lento! Seu resultado foi: " + media + "ms para 500ms";
    }
 }
